@@ -171,6 +171,42 @@ if "last_result" not in st.session_state:
 if "finished" not in st.session_state:
     st.session_state.finished = False
 
+# ==============================
+# THEME
+# ==============================
+
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = True
+
+st.session_state.dark_mode = st.toggle(
+    "🌙 Dark Mode",
+    value=st.session_state.dark_mode
+)
+
+# ==============================
+# THEME
+# ==============================
+
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = True
+
+st.session_state.dark_mode = st.toggle(
+    "🌙 Dark Mode",
+    value=st.session_state.dark_mode
+)
+
+if st.session_state.dark_mode:
+
+    container_color = "rgba(0,0,0,0.45)"
+    overlay_color = "rgba(0,0,0,0.55)"
+    title_color = "#9b59ff"
+
+else:
+
+    container_color = "rgba(255,255,255,0.75)"
+    overlay_color = "rgba(255,255,255,0.15)"
+    title_color = "#6d28d9"
+
 
 
 # ==============================
