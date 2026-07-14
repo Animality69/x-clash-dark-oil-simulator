@@ -53,7 +53,7 @@ st.set_page_config(
 
 
 # ==============================
-# X-CLASH GAME PANEL BACKGROUND
+# FIXED MOBILE BACKGROUND
 # ==============================
 
 def add_bg(image_file):
@@ -71,29 +71,22 @@ def add_bg(image_file):
 
         .stApp {{
 
-            background-color: #111111;
-
-        }}
-
-
-        .block-container {{
-
             background-image:
             linear-gradient(
-                rgba(0,0,0,0.65),
-                rgba(0,0,0,0.65)
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)
             ),
             url("data:image/jpg;base64,{encoded}");
 
-            background-size: 800px 800px;
+            background-size: auto 100vh;
 
             background-repeat: no-repeat;
 
-            background-position: center top;
+            background-position: center center;
 
-            padding: 40px;
+            background-attachment: fixed;
 
-            border-radius: 20px;
+            background-color: black;
 
         }}
 
