@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 
 
 # ==============================
@@ -49,6 +50,60 @@ st.set_page_config(
     page_icon="⚫"
 )
 
+
+
+# ==============================
+# X-CLASH GAME PANEL BACKGROUND
+# ==============================
+
+def add_bg(image_file):
+
+    with open(image_file, "rb") as file:
+
+        encoded = base64.b64encode(
+            file.read()
+        ).decode()
+
+
+    st.markdown(
+        f"""
+        <style>
+
+        .stApp {{
+
+            background-color: #111111;
+
+        }}
+
+
+        .block-container {{
+
+            background-image:
+            linear-gradient(
+                rgba(0,0,0,0.65),
+                rgba(0,0,0,0.65)
+            ),
+            url("data:image/jpg;base64,{encoded}");
+
+            background-size: 800px 800px;
+
+            background-repeat: no-repeat;
+
+            background-position: center top;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+        }}
+
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+add_bg("background.jpg")
 
 
 # ==============================
@@ -261,7 +316,6 @@ if st.button("⚫ Calculate Dark Oil"):
 # ==============================
 
 if st.session_state.calculated:
-
 
     result = st.session_state.last_result
 
