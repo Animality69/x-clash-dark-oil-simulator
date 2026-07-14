@@ -55,12 +55,12 @@ st.set_page_config(
 # ==============================
 
 st.markdown(
-    """
+    f"""
     <style>
 
-    .block-container {
+    .block-container {{
 
-        background: rgba(0, 0, 0, 0.45);
+        background: {container_color};
 
         border-radius: 20px;
 
@@ -68,7 +68,7 @@ st.markdown(
 
         margin-top: 20px;
 
-    }
+    }}
 
     </style>
     """,
