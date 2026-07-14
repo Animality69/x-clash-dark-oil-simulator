@@ -67,7 +67,7 @@ if dark_mode:
     text_color = "white"
 
 else:
-    container_color = "transparent"
+    container_color = "rgba(255,255,255,0.15)"
     overlay_color = "transparent"
     title_color = "#6d28d9"
     background_color = "#f5f5f5"
