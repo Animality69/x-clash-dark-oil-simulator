@@ -64,11 +64,14 @@ if dark_mode:
     overlay_color = "rgba(0,0,0,0.55)"
     title_color = "#9b59ff"
     background_color = "black"
+    text_color = "white"
+
 else:
     container_color = "rgba(255,255,255,0.75)"
     overlay_color = "rgba(255,255,255,0.10)"
     title_color = "#6d28d9"
     background_color = "#f5f5f5"
+    text_color = "black"
 
 # ==============================
 # DARK UI CONTAINER
@@ -87,6 +90,34 @@ st.markdown(
         padding: 25px;
 
         margin-top: 20px;
+
+    }}
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    f"""
+    <style>
+
+    .stMarkdown,
+    .stText,
+    .stSubheader,
+    .stHeader,
+    .stCaption,
+    label,
+    p,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {{
+
+        color: {text_color} !important;
 
     }}
 
