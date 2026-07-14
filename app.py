@@ -50,7 +50,30 @@ st.set_page_config(
     page_icon="⚫"
 )
 
+# ==============================
+# DARK UI CONTAINER
+# ==============================
 
+st.markdown(
+    """
+    <style>
+
+    .block-container {
+
+        background: rgba(0, 0, 0, 0.45);
+
+        border-radius: 20px;
+
+        padding: 25px;
+
+        margin-top: 20px;
+
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # ==============================
 # FIXED MOBILE BACKGROUND
