@@ -340,7 +340,7 @@ if st.session_state.calculated:
 
 
     st.subheader(
-        "======= RESULTS ======="
+        "====== RESULTS ======"
     )
 
 
