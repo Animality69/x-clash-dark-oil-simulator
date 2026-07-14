@@ -51,16 +51,42 @@ st.set_page_config(
 )
 
 # ==============================
+# THEME
+# ==============================
+
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = True
+
+dark_mode = st.toggle(
+    "🌙 Dark Mode",
+    value=st.session_state.dark_mode,
+    key="dark_mode_toggle"
+)
+
+st.session_state.dark_mode = dark_mode
+
+if dark_mode:
+    container_color = "rgba(0,0,0,0.45)"
+    overlay_color = "rgba(0,0,0,0.55)"
+    title_color = "#9b59ff"
+    background_color = "black"
+else:
+    container_color = "rgba(255,255,255,0.75)"
+    overlay_color = "rgba(255,255,255,0.10)"
+    title_color = "#6d28d9"
+    background_color = "#f5f5f5"
+
+# ==============================
 # DARK UI CONTAINER
 # ==============================
 
 st.markdown(
-    """
+    f"""
     <style>
 
-    .block-container {
+    .block-container {{
 
-        background: rgba(0, 0, 0, 0.45);
+        background: {container_color};
 
         border-radius: 20px;
 
@@ -68,7 +94,7 @@ st.markdown(
 
         margin-top: 20px;
 
-    }
+    }}
 
     </style>
     """,
@@ -96,8 +122,8 @@ def add_bg(image_file):
 
             background-image:
             linear-gradient(
-                rgba(0,0,0,0.55),
-                rgba(0,0,0,0.55)
+                {overlay_color},
+                {overlay_color}
             ),
             url("data:image/jpg;base64,{encoded}");
 
@@ -109,7 +135,7 @@ def add_bg(image_file):
 
             background-attachment: fixed;
 
-            background-color: black;
+            background-color: {background_color};
 
         }}
 
@@ -127,10 +153,10 @@ add_bg("background.jpg")
 # ==============================
 
 st.markdown(
-    """
+    f"""
     <h1 style="
         text-align:center;
-        color:#9b59ff;
+        color:{title_color};
         font-size:42px;
         ">
         ⚫ X-Clash Dark Oil Simulator ⚫<br>
