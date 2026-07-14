@@ -57,13 +57,7 @@ st.set_page_config(
 if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = True
 
-dark_mode = st.toggle(
-    "🌙 Dark Mode",
-    value=st.session_state.dark_mode,
-    key="dark_mode_toggle"
-)
-
-st.session_state.dark_mode = dark_mode
+dark_mode = st.session_state.dark_mode
 
 if dark_mode:
     container_color = "rgba(0,0,0,0.45)"
@@ -429,3 +423,15 @@ if st.session_state.calculated:
 
 
         st.rerun()
+
+st.divider()
+
+new_theme = st.toggle(
+    "🌙 Dark Mode",
+    value=st.session_state.dark_mode,
+    key="dark_mode_toggle"
+)
+
+if new_theme != st.session_state.dark_mode:
+    st.session_state.dark_mode = new_theme
+    st.rerun()
