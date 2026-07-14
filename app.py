@@ -127,10 +127,10 @@ add_bg("background.jpg")
 # ==============================
 
 st.markdown(
-    """
+    f"""
     <h1 style="
         text-align:center;
-        color:#9b59ff;
+        color:{title_color};
         font-size:42px;
         ">
         ⚫ X-Clash Dark Oil Simulator ⚫<br>
