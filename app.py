@@ -55,12 +55,12 @@ st.set_page_config(
 # ==============================
 
 st.markdown(
-    f"""
+    """
     <style>
 
-    .block-container {{
+    .block-container {
 
-        background: {container_color};
+        background: rgba(0, 0, 0, 0.45);
 
         border-radius: 20px;
 
@@ -68,7 +68,7 @@ st.markdown(
 
         margin-top: 20px;
 
-    }}
+    }
 
     </style>
     """,
@@ -127,10 +127,10 @@ add_bg("background.jpg")
 # ==============================
 
 st.markdown(
-    f"""
+    """
     <h1 style="
         text-align:center;
-        color:{title_color};
+        color:#9b59ff;
         font-size:42px;
         ">
         ⚫ X-Clash Dark Oil Simulator ⚫<br>
@@ -170,42 +170,6 @@ if "last_result" not in st.session_state:
 
 if "finished" not in st.session_state:
     st.session_state.finished = False
-
-# ==============================
-# THEME
-# ==============================
-
-if "dark_mode" not in st.session_state:
-    st.session_state.dark_mode = True
-
-st.session_state.dark_mode = st.toggle(
-    "🌙 Dark Mode",
-    value=st.session_state.dark_mode
-)
-
-# ==============================
-# THEME
-# ==============================
-
-if "dark_mode" not in st.session_state:
-    st.session_state.dark_mode = True
-
-st.session_state.dark_mode = st.toggle(
-    "🌙 Dark Mode",
-    value=st.session_state.dark_mode
-)
-
-if st.session_state.dark_mode:
-
-    container_color = "rgba(0,0,0,0.45)"
-    overlay_color = "rgba(0,0,0,0.55)"
-    title_color = "#9b59ff"
-
-else:
-
-    container_color = "rgba(255,255,255,0.75)"
-    overlay_color = "rgba(255,255,255,0.15)"
-    title_color = "#6d28d9"
 
 
 
